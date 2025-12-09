@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Md Naim Hasan</title>
+     <link rel="icon" href="photos for pic/round naim for header.jpg" type="image/png" >
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+</head>
+<script>
+    window.addEventListener("load", function () {
+        const loader = document.getElementById("loading-screen");
+        loader.classList.add("hide");
+
+        setTimeout(() => {
+            loader.style.display = "none";
+        }, 600); // it causes to fix loading effect with page load
+    });
+</script>
+
+<body>
+      <div id="loading-screen">
+    <div class="loader"></div>
+</div>
+    <header>
+        <div class="header-left">
+            <a href="index.html" class="home-link">
+            <div class="profile-pic">
+                <img src="photos for pic/naim aura profile.jpg" alt="Md Naim Hasan">
+            </div>
+            <div class="name">Md Naim Hasan</div>
+            </a>
+        </div>
+
+        
+
+        <div class="header-right">
+            <nav class="nav-links">
+                <a href="index.html" class="nav-btn">About</a>
+                <a href="projects.html" class="nav-btn">Projects</a>
+                <a href="play.html" class="nav-btn">Gallery</a>
+                <a href="contactme.html" class="nav-btn">Contact Me</a>
+            </nav>
+            <div class="hamburger">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+<script>
+(function () {
+  const form = document.getElementById('contactForm');
+  const emailInput = document.getElementById('emailInput');
+  const messageInput = document.getElementById('messageInput');
+  const cancelBtn = document.getElementById('cancelBtn');
+
+  function validEmail(e) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e);
+  }
+
+  form.addEventListener("submit", function (ev) {
+    ev.preventDefault();
+
+    const to = "naimhasan1546@gmail.com"; 
+    const from = emailInput.value.trim();
+    const msg = messageInput.value.trim();
+
+    if (!validEmail(from)) {
+      alert("Enter a valid email.");
+      emailInput.focus();
+      return;
+    }
+    if (msg.length < 3) {
+      alert("Write a proper message.");
+      messageInput.focus();
+      return;
+    }
+
+    const subject = encodeURIComponent("Website contact from " + from);
+    const body = encodeURIComponent("From: " + from + "\n\n" + msg);
+
+    const mailto = `mailto:${to}?subject=${subject}&body=${body}`;
+
+    // open gmail , it should do it, but it doesnt :(
+    window.location.href = mailto;
+  });
+
+  // cancel button, which should clear the form, but it doesnt. :(
+  cancelBtn.addEventListener("click", function () {
+    emailInput.value = "";
+    messageInput.value = "";
+  });
+})();
+</script>
+
+
+
+<main>
+
+
+<section class="contact-section" id="contact">
+  <div class="contact-wrap">
+
+    <!-- LEFT: Form -->
+    <div class="contact-left">
+      <h2 class="contact-title">Contact Me<span class="title-underline"></span></h2>
+
+      <form id="contactForm" class="contact-form" novalidate>
+        <label class="label">Email me</label>
+        <input id="emailInput" type="email" placeholder="your.email@example.com" required>
+
+        <label class="label">Message</label>
+        <textarea id="messageInput" rows="6" placeholder="Write your message here..." required></textarea>
+
+        <div class="form-actions">
+          <button type="submit" class="btn-send">Send</button>
+          <button type="button" class="btn-cancel" id="cancelBtn">Cancel</button>
+        </div>
+      </form>
+
+      <div class="or-line">or</div>
+
+      <div class="social-list">
+        <div class="social-row">
+          <a class="social-link" href="https://facebook.com/ewwnaim" target="_blank">
+            <i class="bi bi-facebook"></i>
+            <span class="social-username"> Naim Hasan </span>
+          </a>
+        </div>
+
+        <div class="social-row">
+          <a class="social-link" href="https://instagram.com/ugh_naim" target="_blank">
+            <span class="insta-wrap"><i class="bi bi-instagram"></i></span>
+            <span class="social-username">@ugh_naim <span>
+          </a>
+        </div>
+
+     
+        <div class="social-row">
+          <a class="social-link" href="https://naimhasan99.netlify.app" target="_blank">
+            <i class="bi bi-globe"></i>
+            <span class="social-username">naimhasan99.netlify.app</span>
+          </a>
+        </div>
+        
+
+        <div class="social-row">
+          <a class="social-link" href="https://youtube.com/@naimhasan003" target="_blank">
+            <i class="bi bi-youtube"></i>
+            <span class="social-username">@naimhasan003</span>
+          </a>
+        </div>
+        <div class="social-row">
+          <a class="social-link" href="https://github.com/NaimHasan00" target="_blank">
+            <i class="bi bi-github"></i>
+            <span class="social-username">@NaimHasan00</span>
+          </a>
+        </div>
+
+        <div class="social-row">
+          <a class="social-link" href="https://x.com/eww_naim" target="_blank">
+            <i class="bi bi-twitter-x"></i>
+            <span class="social-username">@eww_naim</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Round photo -->
+    <div class="contact-right">
+      <div class="contact-photo">
+        
+        <img src="photos for pic/naim aura flip.jpg" alt="Md Naim Hasan">
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</main>
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-container">
+    <p class="footer-copy">
+      &copy; <a href="https://facebook.com/ewwnaim" target="_blank">Md Naim Hasan</a> || 2025 All rights reserved.
+    </p>
+    <div class="footer-socials">
+      <a href="https://www.facebook.com/ewwnaim" target="_blank"><i class="bi bi-facebook"></i></a>
+      <a href="https://instagram.com/ugh_naim" target="_blank"><i class="bi bi-instagram"></i></a>
+      <a href="https://linkedin.com/in/" target="_blank"><i class="bi bi-linkedin"></i></a>
+      <a href="https://naimhasan99.netlify.com" target="_blank"><i class="bi bi-globe"></i></a>
+      <a href="https://github.com/NaimHasan00" target="_blank"><i class="bi bi-github"></i></a>
+
+
+    </div>
+  </div>
+</footer>
+
+</html>
